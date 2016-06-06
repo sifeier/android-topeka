@@ -68,28 +68,13 @@ public class SignInFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (savedInstanceState != null) {
+        super.onCreate(savedInstanceState);
+        if (null != savedInstanceState) {
             final int savedAvatarIndex = savedInstanceState.getInt(KEY_SELECTED_AVATAR_INDEX);
             if (savedAvatarIndex != GridView.INVALID_POSITION) {
                 mSelectedAvatar = Avatar.values()[savedAvatarIndex];
             }
         }
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        final View contentView = inflater.inflate(R.layout.fragment_sign_in, container, false);
-        contentView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(View v, int left, int top, int right, int bottom,
-                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                v.removeOnLayoutChangeListener(this);
-                setUpGridView(getView());
-            }
-        });
-        return contentView;
     }
 
     @Override
@@ -100,6 +85,22 @@ public class SignInFragment extends Fragment {
             outState.putInt(KEY_SELECTED_AVATAR_INDEX, GridView.INVALID_POSITION);
         }
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        final View contentView = inflater.inflate(R.layout.fragment_sign_in, container, false);
+        contentView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                    int oldLeft,
+                    int oldTop, int oldRight, int oldBottom) {
+                v.removeOnLayoutChangeListener(this);
+                setUpGridView(getView());
+            }
+        });
+        return contentView;
     }
 
     @Override

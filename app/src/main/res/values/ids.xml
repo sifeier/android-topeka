@@ -22,4 +22,8 @@
     <item name="quiz_edit_text_two" type="id" />
     <item name="solved" type="id" />
 
+    <item type="id" name="expandable_text"/>
+    <item type="id" name="expand_cover"/>
+    <item type="id" name="expand_collapse"/>
+
 </resources>

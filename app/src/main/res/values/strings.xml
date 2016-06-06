@@ -29,4 +29,12 @@
     <string name="sign_out">Sign out</string>
     <string name="x_points">%1$d pts</string>
     <string name="back">back</string>
+
+
+    <string name="long_string">《太阳的后裔》（朝鲜语：태양의
+        후예）为韩国KBS自2016年2月24日起播出的水木迷你连续剧，由宋仲基、宋慧乔、金智媛及晋久主演，人气剧集《巴黎恋人》《秘密花园》《绅士的品格》《继承者们》编剧金银淑、《女王的教室》金元硕作家与《Dream
+        High》《学校2013》《秘密》李应福导演共同打造，本剧亦是金银淑首次编写KBS电视剧。有别于韩剧“一边拍一边播”的传统制剧方式，此剧是KBS电视剧史上第一部全部完成制作才播出的电视剧。另外，此剧是人气演员宋仲基退伍后的复出作品，又与演员宋慧乔、金智媛、晋久及人气作家金银淑等合作，令此剧备受瞩目。
+    </string>
+
+    <string name="short_string">《太阳的后裔》end</string>
 </resources>

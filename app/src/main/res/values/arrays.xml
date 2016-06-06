@@ -13,7 +13,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <resources>
     <array name="alphabet">
         <item>A</item>
@@ -43,4 +42,13 @@
         <item>Y</item>
         <item>Z</item>
     </array>
+
+    <!-- Used in App/SearchInvoke.java -->
+    <string-array name="search_menuModes">
+        <item>Search Key</item>
+        <item>Menu Item</item>
+        <item>Type-To-Search</item>
+        <item>Disabled</item>
+    </string-array>
+
 </resources>

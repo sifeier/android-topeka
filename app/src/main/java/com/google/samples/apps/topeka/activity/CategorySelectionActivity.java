@@ -39,6 +39,7 @@ import com.google.samples.apps.topeka.R;
 import com.google.samples.apps.topeka.fragment.CategorySelectionFragment;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
+import com.google.samples.apps.topeka.me.DesignMeActivity;
 import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
 import com.google.samples.apps.topeka.widget.AvatarView;
@@ -101,6 +102,7 @@ public class CategorySelectionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         final AvatarView avatarView = (AvatarView) toolbar.findViewById(R.id.avatar);
         avatarView.setAvatar(player.getAvatar().getDrawableId());
+
         //noinspection PrivateResource
         ((TextView) toolbar.findViewById(R.id.title)).setText(getDisplayName(player));
     }
@@ -122,6 +124,9 @@ public class CategorySelectionActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.design_me:
+                startActivity(new Intent(this, DesignMeActivity.class));
+                break;
             case R.id.sign_out: {
                 signOut();
                 return true;

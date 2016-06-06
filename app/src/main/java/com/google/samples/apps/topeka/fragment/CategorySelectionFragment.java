@@ -94,6 +94,7 @@ public class CategorySelectionFragment extends Fragment {
 
         final Pair[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, false,
                 new Pair<>(toolbar, activity.getString(R.string.transition_toolbar)));
+
         @SuppressWarnings("unchecked")
         ActivityOptionsCompat sceneTransitionAnimation = ActivityOptionsCompat
                 .makeSceneTransitionAnimation(activity, pairs);
