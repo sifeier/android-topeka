@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.rey.material.widget.Button;
 import com.rey.material.widget.Spinner;
 
 import java.util.ArrayList;
@@ -32,6 +33,10 @@ public class DesignMeActivity extends Activity {
 
     private com.rey.material.widget.Spinner mSpinner;
 
+    private Button remindBtn;
+
+    private RemindView mRemindView;
+
     // Menu mode spinner choices
     // This list must match the list found in samples/ApiDemos/res/values/arrays.xml
     final static int MENUMODE_SEARCH_KEY = 0;
@@ -49,10 +54,12 @@ public class DesignMeActivity extends Activity {
 
         mySortInstanceType();
 
-        ColorTextView colorTextView = (ColorTextView)findViewById(R.id.content_tv);
-        colorTextView.setTextColor(getColor(R.color.green));
+//        ColorTextView colorTextView = (ColorTextView)findViewById(R.id.color_tv);
+//        colorTextView.setTextColor(getColor(R.color.green));
 
         mMaterialSpinner = (MaterialSpinner) findViewById(R.id.spinner_menu_mode);
+
+        mRemindView = (RemindView) findViewById(R.id.remind_view);
 
         // Populate items
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -172,6 +179,11 @@ public class DesignMeActivity extends Activity {
 
         Log.e(TAG, families.toString());
     }
+
+    public void onRemindButtonClick(View v) {
+        mRemindView.saveShowStatus();
+    }
+
 
     public class InstanceFamilyComparator<T> implements Comparator<T> {
 
