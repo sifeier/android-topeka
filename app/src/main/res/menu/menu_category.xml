@@ -24,4 +24,25 @@
             android:id="@+id/design_me"
             app:showAsAction="never"
             android:title="design me" />
+
+    <item
+            android:id="@+id/test"
+            app:showAsAction="never"
+            android:title="test"/>
+
+    <item
+            android:id="@+id/float_view"
+            app:showAsAction="never"
+            android:title="floatview"/>
+
+    <item
+            android:id="@+id/clear_data"
+            app:showAsAction="never"
+            android:title="clearData"/>
+
+    <item
+            android:id="@+id/clear_cache"
+            app:showAsAction="never"
+            android:title="clearCache"/>
+
 </menu>

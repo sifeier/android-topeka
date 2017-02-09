@@ -6,6 +6,35 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试BinderThread!"/>
+
+    <Button
+            android:id="@+id/binder_sennsor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SensorManager"/>
+
+    <Button
+            android:id="@+id/binder_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NotificationManager"/>
+
+    <Button
+            android:id="@+id/binder_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DownloadManager"/>
+
+
+    <com.google.samples.apps.topeka.tab.PagerSlidingTabStrip
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
     <com.google.samples.apps.topeka.me.RemindView
             android:id="@+id/remind_view"
             android:layout_height="wrap_content"

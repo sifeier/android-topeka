@@ -20,7 +20,11 @@ apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "24.0.2"
+
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.google.samples.apps.topeka"
@@ -43,8 +47,8 @@ android {
 }
 
 ext {
-    supportLibVersion = "23.4.0"
-    espressoVersion = "2.2.1"
+    supportLibVersion = "24.2.1"
+    espressoVersion = "2.2.2"
     androidTestVersion = "0.4"
     hamcrestVersion = "1.3"
     junitVersion = "4.12"
@@ -54,10 +58,15 @@ ext {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "com.android.support:cardview-v7:${supportLibVersion}"
-    compile "com.android.support:appcompat-v7:${supportLibVersion}"
-    compile "com.android.support:design:${supportLibVersion}"
-    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile project(":fly")
+
+    compile 'com.jakewharton:butterknife:8.+'
+
+    compile ('com.jpardogo.materialtabstrip:library:1.1.1')
+    {
+        exclude group: 'com.android.support', module:'support-v4'
+    }
+
     compile "com.android.support.test.espresso:espresso-idling-resource:${espressoVersion}"
 
 //    compile "org.jokar:permissiondispatcher:${permissionVersion}"
@@ -99,8 +108,5 @@ dependencies {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'cardview-v7'
     }
-
-    // easy permission to adapter Android M
-    compile 'pub.devrel:easypermissions:0.2.0'
 
 }

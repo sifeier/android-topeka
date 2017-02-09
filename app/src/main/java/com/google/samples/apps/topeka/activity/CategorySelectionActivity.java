@@ -18,6 +18,7 @@ package com.google.samples.apps.topeka.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -30,21 +31,28 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.samples.apps.topeka.R;
 import com.google.samples.apps.topeka.fragment.CategorySelectionFragment;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
+import com.google.samples.apps.topeka.helper.AppHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
 import com.google.samples.apps.topeka.me.DesignMeActivity;
+import com.google.samples.apps.topeka.me.FloatViewActivity;
 import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
+import com.google.samples.apps.topeka.tab.TabMainActivity;
 import com.google.samples.apps.topeka.widget.AvatarView;
 
 public class CategorySelectionActivity extends AppCompatActivity {
+
+    private static final String TAG = "CategorySelectionUI";
 
     private static final String EXTRA_PLAYER = "player";
 
@@ -102,7 +110,6 @@ public class CategorySelectionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         final AvatarView avatarView = (AvatarView) toolbar.findViewById(R.id.avatar);
         avatarView.setAvatar(player.getAvatar().getDrawableId());
-
         //noinspection PrivateResource
         ((TextView) toolbar.findViewById(R.id.title)).setText(getDisplayName(player));
     }
@@ -124,15 +131,32 @@ public class CategorySelectionActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.test:
+                Log.e(TAG, String.format("%02d", 9));
+                testForgroundApp();
+                break;
+            case R.id.float_view:
+                startActivity(new Intent(this, FloatViewActivity.class));
+                break;
             case R.id.design_me:
-                startActivity(new Intent(this, DesignMeActivity.class));
+                startActivity(new Intent(this, TabMainActivity.class));
+//                startActivity(new Intent(this, DesignMeActivity.class));
                 break;
             case R.id.sign_out: {
                 signOut();
                 return true;
             }
+            case R.id.clear_cache:
+                break;
+            case R.id.clear_data:
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void testForgroundApp() {
+        ActivityManager.RunningAppProcessInfo processInfo = AppHelper.getCurrentInfo(this);
+        Toast.makeText(this, processInfo.processName, Toast.LENGTH_LONG).show();
     }
 
     @SuppressLint("NewApi")

@@ -13,7 +13,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <resources>
     <string name="app_name">Topeka</string>
     <string name="last_initial">Last Initial</string>
@@ -37,4 +36,7 @@
     </string>
 
     <string name="short_string">《太阳的后裔》end</string>
+
+    <string name="action_contact">Contact</string>
+
 </resources>

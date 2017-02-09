@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_category_music_raster">
+
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avatar_1_raster"
+            android:layout_alignParentTop="true"
+            android:layout_margin="12dp"/>
+
+    <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_1"
+            android:layout_margin="12dp"
+            android:src="@drawable/avatar_2_raster"/>
+
+    <ImageView
+            android:id="@+id/iv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_2"
+            android:layout_margin="12dp"
+            android:src="@drawable/avatar_3_raster"/>
+
+</RelativeLayout>
+
+    <!--<com.buke.uikit.FloatingView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+    <!--</com.buke.uikit.FloatingView>-->
+
+    <!--<ImageView-->
+            <!--android:id="@+id/avatar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:src="@drawable/avatar_1_raster"-->
+    <!--/>-->
+
+    <com.buke.uikit.AdFloatView
+            android:id="@+id/ad_float"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp">
+    </com.buke.uikit.AdFloatView>
+
+</FrameLayout>

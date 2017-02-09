@@ -3,16 +3,25 @@ package com.google.samples.apps.topeka.me;
 import com.google.samples.apps.topeka.R;
 import com.google.samples.apps.topeka.widget.MaterialSpinner;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.app.NotificationManager;
+import android.app.usage.NetworkStatsManager;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.net.Uri;
+import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.google.samples.apps.topeka.tab.PagerSlidingTabStrip;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.Spinner;
 
@@ -25,11 +34,13 @@ import java.util.List;
 /**
  * Created by buke on 16/3/30.
  */
-public class DesignMeActivity extends Activity {
+public class DesignMeActivity extends Activity implements View.OnClickListener{
 
     private static final String TAG = "DesignMeActivity";
 
     private MaterialSpinner mMaterialSpinner;
+
+    private PagerSlidingTabStrip mSlidingTabStrip;
 
     private com.rey.material.widget.Spinner mSpinner;
 
@@ -56,6 +67,8 @@ public class DesignMeActivity extends Activity {
 
 //        ColorTextView colorTextView = (ColorTextView)findViewById(R.id.color_tv);
 //        colorTextView.setTextColor(getColor(R.color.green));
+
+        mSlidingTabStrip = (PagerSlidingTabStrip)findViewById(R.id.indicator);
 
         mMaterialSpinner = (MaterialSpinner) findViewById(R.id.spinner_menu_mode);
 
@@ -107,12 +120,37 @@ public class DesignMeActivity extends Activity {
         initFoldableTv();
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.binder_notify:
+                NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.cancelAll();
+                break;
+            case R.id.binder_download:
+                DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+                downloadManager.enqueue(new DownloadManager.Request(Uri.parse("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3jWa-albpF6-lz1b-BrOP_nIgrfJGBJ09zrYxeBBGk8mCc3qmIgwi2cM")).setTitle("pic"));
+                break;
+            case R.id.binder_sennsor:
+                SensorManager sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+                sensorManager.getSensorList(Sensor.TYPE_LIGHT);
+                break;
+            default:
+                break;
+        }
+    }
+
     ExpandableTextView mExpandableTextView;
 
     private void initFoldableTv() {
         mExpandableTextView = (ExpandableTextView) findViewById(R.id.expand_view);
         mExpandableTextView.setText(getString(R.string.long_string));
         mExpandableTextView.setUnreadStatus();
+    }
+
+    private void initIndicator() {
+
     }
 
     /**
@@ -184,9 +222,7 @@ public class DesignMeActivity extends Activity {
         mRemindView.saveShowStatus();
     }
 
-
     public class InstanceFamilyComparator<T> implements Comparator<T> {
-
         @Override
         public int compare(T lhs, T rhs) {
             return 0;
