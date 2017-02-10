@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.topeka.me;
+package com.buke.view;
 
 import com.google.samples.apps.topeka.R;
 
@@ -39,7 +39,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 

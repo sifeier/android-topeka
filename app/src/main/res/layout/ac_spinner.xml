@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"/>
 
-    <com.google.samples.apps.topeka.me.RemindView
+    <com.buke.view.RemindView
             android:id="@+id/remind_view"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="24dp"/>
 
-    <com.google.samples.apps.topeka.me.ExpandableTextView
+    <com.buke.view.ExpandableTextView
             android:id="@+id/expand_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,6 +94,6 @@
                 android:background="#AAFFFFFF"
                 android:visibility="gone"
                 android:layout_alignBottom="@id/expandable_text"/>
-    </com.google.samples.apps.topeka.me.ExpandableTextView>
+    </com.buke.view.ExpandableTextView>
 
 </LinearLayout>

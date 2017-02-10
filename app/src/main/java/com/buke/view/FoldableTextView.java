@@ -1,4 +1,4 @@
-package com.google.samples.apps.topeka.me;
+package com.buke.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -43,8 +43,9 @@ import com.google.samples.apps.topeka.fragment.CategorySelectionFragment;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.AppHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
-import com.google.samples.apps.topeka.me.DesignMeActivity;
-import com.google.samples.apps.topeka.me.FloatViewActivity;
+
+import com.buke.ConstraintLayoutActivity;
+import com.buke.FloatViewActivity;
 import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
 import com.google.samples.apps.topeka.tab.TabMainActivity;
@@ -149,6 +150,11 @@ public class CategorySelectionActivity extends AppCompatActivity {
             case R.id.clear_cache:
                 break;
             case R.id.clear_data:
+                break;
+            case R.id.constraint_layout:
+                startActivity(new Intent(this, ConstraintLayoutActivity.class));
+                break;
+            default:
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -16,14 +16,16 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
             android:id="@+id/sign_out"
             app:showAsAction="never"
-            android:title="@string/sign_out" />
+            android:title="@string/sign_out"/>
+
     <item
             android:id="@+id/design_me"
             app:showAsAction="never"
-            android:title="design me" />
+            android:title="design me"/>
 
     <item
             android:id="@+id/test"
@@ -44,5 +46,9 @@
             android:id="@+id/clear_cache"
             app:showAsAction="never"
             android:title="clearCache"/>
+
+    <item android:id="@+id/constraint_layout"
+          app:showAsAction="never"
+          android:title="ConstraintLayout"/>
 
 </menu>

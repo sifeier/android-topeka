@@ -1,4 +1,4 @@
-package com.google.samples.apps.topeka.me;
+package com.buke;
 
 import com.google.samples.apps.topeka.R;
 import com.google.samples.apps.topeka.widget.MaterialSpinner;
@@ -7,12 +7,10 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.NotificationManager;
-import android.app.usage.NetworkStatsManager;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.net.Uri;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +20,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.google.samples.apps.topeka.tab.PagerSlidingTabStrip;
+
+import com.buke.view.ExpandableTextView;
+import com.buke.view.RemindView;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.Spinner;
 

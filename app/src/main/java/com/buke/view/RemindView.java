@@ -1,4 +1,4 @@
-package com.google.samples.apps.topeka.me;
+package com.buke.view;
 
 import com.google.samples.apps.topeka.BuildConfig;
 import com.google.samples.apps.topeka.R;
